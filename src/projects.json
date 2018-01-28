@@ -1,0 +1,42 @@
+{
+    "project1": {
+        "id": 1,
+        "name": "Project 1",
+        "url": "http://www.google.de",
+        "description": "This is a cool project I made!",
+        "techs": ["Javascript", "JQuery"],
+        "image": "http://www",
+        "thumbnail": "./static/projects/petition/landing_page_thumb.png",
+        "show": false
+    },
+    "project2": {
+        "id": 2,
+        "name": "Project 2",
+        "url": "http://www.google.de",
+        "description": "that's another cool project",
+        "techs": ["Foo", "JQuery"],
+        "image": "http://www",
+        "thumbnail": "./static/projects/petition/landing_page_thumb.png",
+        "show": false
+    },
+    "project3": {
+        "id": 3,
+        "name": "Project 3",
+        "url": "http://www.google.de",
+        "description": "that's the most awesome project!",
+        "techs": ["Javascript", "JQuery", "Bla"],
+        "image": "http://www",
+        "thumbnail": "./static/projects/petition/landing_page_thumb.png",
+        "show": false
+    },
+    "project4": {
+        "id": 4,
+        "name": "Project 4",
+        "url": "http://www.google.de",
+        "description": "Yippie",
+        "techs": ["Javascript", "CSS", "HTML"],
+        "image": "http://www",
+        "thumbnail": "./static/projects/petition/landing_page_thumb.png",
+        "show": false
+    }
+}

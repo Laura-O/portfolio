@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+}
+
+.image {
+  width: 300px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.image-file img {
+  width: 200px;
+  height: auto;
+}
