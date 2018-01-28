@@ -1,6 +1,7 @@
 <template>
     <div class="footer">
-        <div v-if="selectedProject" @click="minimize()">yep</div>
+        <div class="logo buttons" @click="showStartMenu()"><font-awesome-icon icon="eject" /></div>
+        <div class="bar-entry" v-if="selectedProject" @click="minimize()">{{selectedProject.name}}</div>
     </div>
 </template>
 
@@ -13,6 +14,9 @@ export default {
     minimize() {
       windowBus.$emit('minimize');
     },
+    showStartMenu() {
+      widnowBus.$emit('showStart');
+    },
   },
 };
 </script>
@@ -20,5 +24,17 @@ export default {
 <style>
 .footer {
   color: white;
+}
+
+.logo {
+  margin: 5px 10px;
+}
+
+.bar-entry {
+  background-color: #d90368;
+  border-radius: 2px;
+  margin: 1px;
+  padding: 1px;
+  width: 80px;
 }
 </style>

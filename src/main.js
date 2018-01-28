@@ -11,6 +11,8 @@ import {
   faWindowClose,
 } from '@fortawesome/fontawesome-free-solid';
 
+import { faEject } from '@fortawesome/fontawesome-pro-regular';
+
 FontAwesome.library.add(faGithub, faWindowClose, faWindowMaximize, faWindowMinimize);
 Vue.component('FontAwesomeIcon', FontAwesomeIcon);
 Vue.component('vue-draggable-resizable', VueDraggableResizable);

@@ -14,6 +14,7 @@
         :project="selectedProject"
         @close="showProject = false">
       </project-window>
+      <start-menu></start-menu>
     </div>
     <lower-bar :showProject="showProject" :selectedProject="selectedProject"></lower-bar>
   </div>
@@ -26,6 +27,7 @@ import icon from './components/Icon';
 import projects from './projects.json';
 import projectWindow from './components/ProjectWindow';
 import LowerBar from './components/LowerBar';
+import StartMenu from './components/StartMenu';
 import { windowBus } from './main';
 
 export default {
@@ -46,6 +48,7 @@ export default {
     projectWindow,
     LowerBar,
     FontAwesomeIcon,
+    StartMenu,
   },
   methods: {
     selectProject(project) {
@@ -58,7 +61,7 @@ export default {
     },
   },
   created() {
-    windowBus.$on('projectSelected', (project) => {
+    windowBus.$on('projectSelected', project => {
       this.selectedProject = project;
       this.showProject = true;
     });
@@ -77,9 +80,9 @@ export default {
 #app {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 100vh;
   background-color: lightblue;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .header {
@@ -97,7 +100,8 @@ export default {
 
 #main {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  justify-content: flex-end;
   flex: 1;
 }
 
@@ -118,5 +122,10 @@ li {
 
 a {
   color: #42b983;
+}
+
+.buttons {
+  align-self: flex-end;
+  color: #d90368;
 }
 </style>
