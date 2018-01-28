@@ -1,6 +1,10 @@
 <template>
     <div class="footer">
-        <div class="logo buttons" @click="showStartMenu()"><font-awesome-icon icon="eject" /></div>
+        <div class="logo buttons"
+          v-on:click="showStartMenu"          
+        >
+          <font-awesome-icon icon="eject" />
+        </div>
         <div class="bar-entry" v-if="selectedProject" @click="minimize()">{{selectedProject.name}}</div>
     </div>
 </template>
@@ -14,8 +18,9 @@ export default {
     minimize() {
       windowBus.$emit('minimize');
     },
-    showStartMenu() {
-      widnowBus.$emit('showStart');
+    showStartMenu: function() {
+      console.log('button clicked');
+      this.$emit('toggleMenu');
     },
   },
 };

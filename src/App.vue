@@ -14,9 +14,9 @@
         :project="selectedProject"
         @close="showProject = false">
       </project-window>
-      <start-menu></start-menu>
+      <start-menu v-if="showMenu"></start-menu>
     </div>
-    <lower-bar :showProject="showProject" :selectedProject="selectedProject"></lower-bar>
+    <lower-bar :showProject="showProject" :selectedProject="selectedProject" v-on:toggleMenu="toggleMenu"></lower-bar>
   </div>
 </template>
 
@@ -40,6 +40,7 @@ export default {
       showProject: false,
       selectedProject: undefined,
       activeIcon: null,
+      showMenu: true,
     };
   },
   components: {
@@ -58,6 +59,10 @@ export default {
     deselect() {
       this.selectedProject = undefined;
       this.showProject = false;
+    },
+    toggleMenu() {
+      console.log('yo toggle');
+      this.showMenu = !this.showMenu;
     },
   },
   created() {
