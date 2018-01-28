@@ -97,12 +97,6 @@ export default {
   background-color: #011627;
 }
 
-.footer {
-  display: flex;
-  height: 30px;
-  background-color: #011627;
-}
-
 #main {
   display: flex;
   flex-direction: column;
