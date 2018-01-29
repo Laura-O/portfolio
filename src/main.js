@@ -1,6 +1,6 @@
+import App from './App';
 import Vue from 'vue';
 import VueDraggableResizable from 'vue-draggable-resizable';
-
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import FontAwesome from '@fortawesome/fontawesome';
 
@@ -16,7 +16,6 @@ import { faEject } from '@fortawesome/fontawesome-pro-regular';
 FontAwesome.library.add(faGithub, faWindowClose, faWindowMaximize, faWindowMinimize);
 Vue.component('FontAwesomeIcon', FontAwesomeIcon);
 Vue.component('vue-draggable-resizable', VueDraggableResizable);
-import App from './App';
 
 export const windowBus = new Vue();
 

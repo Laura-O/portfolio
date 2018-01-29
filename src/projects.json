@@ -1,42 +1,52 @@
 {
-    "project1": {
-        "id": 1,
-        "name": "Project 1",
-        "url": "http://www.google.de",
-        "description": "This is a cool project I made!",
-        "techs": ["Javascript", "JQuery"],
-        "image": "http://www",
-        "thumbnail": "./static/projects/petition/landing_page_thumb.png",
-        "show": false
-    },
-    "project2": {
-        "id": 2,
-        "name": "Project 2",
-        "url": "http://www.google.de",
-        "description": "that's another cool project",
-        "techs": ["Foo", "JQuery"],
-        "image": "http://www",
-        "thumbnail": "./static/projects/petition/landing_page_thumb.png",
-        "show": false
-    },
-    "project3": {
-        "id": 3,
-        "name": "Project 3",
-        "url": "http://www.google.de",
-        "description": "that's the most awesome project!",
-        "techs": ["Javascript", "JQuery", "Bla"],
-        "image": "http://www",
-        "thumbnail": "./static/projects/petition/landing_page_thumb.png",
-        "show": false
-    },
-    "project4": {
-        "id": 4,
-        "name": "Project 4",
-        "url": "http://www.google.de",
-        "description": "Yippie",
-        "techs": ["Javascript", "CSS", "HTML"],
-        "image": "http://www",
-        "thumbnail": "./static/projects/petition/landing_page_thumb.png",
-        "show": false
-    }
+  "project1": {
+    "id": 1,
+    "name": "Petition",
+    "url": "https://peachtition.herokuapp.com/",
+    "description": "This is a cool project I made!",
+    "techs": ["Express", "PostgreSQL", "Redis", "Handlebars", "JQuery"],
+    "image": "./static/projects/petition/landing_page.png",
+    "thumbnail": "./static/projects/petition/landing_page_thumb.png",
+    "show": false
+  },
+  "project2": {
+    "id": 2,
+    "name": "Portfolio Website",
+    "url": "http://www.google.de",
+    "description": "This is my portfolio.",
+    "techs": ["Vue.js"],
+    "image": "http://www",
+    "thumbnail": "./static/projects/petition/landing_page_thumb.png",
+    "show": false
+  },
+  "project3": {
+    "id": 3,
+    "name": "Connect 4",
+    "url": "https://connect-4-game.herokuapp.com/",
+    "description": "2-player Connect 4 game",
+    "techs": ["JQuery", "CSS", "HTML"],
+    "image": "./static/projects/connect-4/connect-4.png",
+    "thumbnail": "./static/projects/connect-4/connect-4_thumb.png",
+    "show": false
+  },
+  "project4": {
+    "id": 4,
+    "name": "Mobile flash cards",
+    "url": "",
+    "description": "that's the most awesome project!",
+    "techs": ["React Native"],
+    "image": "./static/projects/mobile_flashcards/quiz_page.png",
+    "thumbnail": "./static/projects/mobile_flashcards/quiz_page_thumb.png",
+    "show": false
+  },
+  "project5": {
+    "id": 5,
+    "name": "Bubble diagram D3.js",
+    "url": "http://secure-meadow-44103.herokuapp.com/",
+    "description": "Yippie",
+    "techs": ["D3.js", "R", "Bootstrap"],
+    "image": "./static/projects/d3_stats/d3-stats-_thumb.png",
+    "thumbnail": "./static/projects/d3_stats/d3-stats_thumb.png",
+    "show": false
+  }
 }
