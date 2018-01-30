@@ -77,10 +77,10 @@ export default {
 }
 
 .window-top {
-    height: 20px;
+    min-height: 20px;
     background-color: #011627;
     color: white;
-    padding: 1px 5px;
+    padding: 2px 5px;
     display: flex;
     justify-content: space-between;
 }

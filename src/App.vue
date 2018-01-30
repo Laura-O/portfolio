@@ -13,9 +13,13 @@
         :project="selectedProject"
         @close="showProject = false">
       </project-window>      
+      <window v-if="showTic"  :initialHeight="400" :initialWidth="250" type="tic">
+          <div slot="text" class="text">Tic Tac Toe</div>
+          <board></board>
+        </window>
       <start-menu v-if="showMenu"></start-menu>
     </div>
-    <lower-bar :showProject="showProject" :selectedProject="selectedProject" v-on:toggleMenu="toggleMenu"></lower-bar>
+    <lower-bar :showProject="showProject" :tic="this.showTic" :selectedProject="selectedProject" v-on:toggleMenu="toggleMenu"></lower-bar>
   </div>
 </template>
 
@@ -26,6 +30,8 @@ import projects from './projects.json';
 import projectWindow from './components/ProjectWindow';
 import LowerBar from './components/LowerBar';
 import StartMenu from './components/StartMenu';
+import Board from './components/Tic-Tac-Toe/Board';
+import Window from './components/Window.vue';
 import { windowBus } from './main';
 
 export default {
@@ -39,6 +45,7 @@ export default {
             selectedProject: undefined,
             activeIcon: null,
             showMenu: false,
+            showTic: true,
         };
     },
     components: {
@@ -47,6 +54,8 @@ export default {
         LowerBar,
         FontAwesomeIcon,
         StartMenu,
+        Board,
+        Window,
     },
     methods: {
         selectProject(project) {
@@ -67,12 +76,29 @@ export default {
             this.selectedProject = project;
             this.showProject = true;
         });
-        windowBus.$on('close', () => {
-            this.selectedProject = undefined;
-            this.showProject = false;
+        windowBus.$on('close', type => {
+            console.log(type);
+            if (type == 'tic') {
+                this.showTic = false;
+            } else {
+                this.selectedProject = undefined;
+                this.showProject = false;
+            }
         });
-        windowBus.$on('minimize', () => {
-            this.showProject = !this.showProject;
+        windowBus.$on('minimize', type => {
+            if (type == 'tic') {
+                this.showTic = false;
+            } else {
+                this.showProject = !this.showProject;
+            }
+        });
+        windowBus.$on('start', type => {
+            if (type == 'tic') {
+                this.showTic = true;
+            }
+        });
+        windowBus.$on('toggleMenu', () => {
+            this.toggleMenu();
         });
     },
 };

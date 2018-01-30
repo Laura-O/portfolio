@@ -1,13 +1,22 @@
 <template>
     <div class="startmenu">
         <ul>
-            <li></li>
+            <li @click="startTic">Tic Tac Toe</li>
         </ul>
     </div>
 </template>
 
 <script>
-export default {};
+import { windowBus } from '../main';
+
+export default {
+    methods: {
+        startTic() {
+            windowBus.$emit('start', 'tic');
+            windowBus.$emit('toggleMenu');
+        },
+    },
+};
 </script>
 
 
