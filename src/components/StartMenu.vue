@@ -23,7 +23,7 @@ export default {
 <style>
 .startmenu {
     background-color: white;
-    width: 100px;
+    width: 200px;
     height: 300px;
     margin-top: 0;
     position: absolute;
