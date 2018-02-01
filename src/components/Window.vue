@@ -57,7 +57,7 @@ export default {
 
 <style>
 .window {
-    border: solid 1px black;
+    border: solid 2px black;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

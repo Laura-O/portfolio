@@ -28,8 +28,8 @@ export default {
     margin-top: 0;
     position: absolute;
     z-index: 1;
-    border-top: 2px solid #011627;
-    border-right: 2px solid #011627;
+    border-top: 3px solid #011627;
+    border-right: 3px solid #011627;
     border-top-right-radius: 5px;
 }
 </style>
