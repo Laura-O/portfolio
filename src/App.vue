@@ -12,7 +12,8 @@
       <project-window v-if="showProject"
         :project="selectedProject"
         @close="showProject = false">
-      </project-window>      
+      </project-window>
+      <about></about>
       <window v-if="showTic"  :initialHeight="400" :initialWidth="250" type="tic">
           <div slot="text" class="text">Tic Tac Toe</div>
           <board></board>
@@ -28,6 +29,7 @@ import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import icon from './components/Icon';
 import projects from './projects.json';
 import projectWindow from './components/ProjectWindow';
+import About from './components/About';
 import LowerBar from './components/LowerBar';
 import StartMenu from './components/StartMenu';
 import Board from './components/Tic-Tac-Toe/Board';
@@ -45,7 +47,7 @@ export default {
             selectedProject: undefined,
             activeIcon: null,
             showMenu: false,
-            showTic: true,
+            showTic: false,
         };
     },
     components: {
@@ -56,6 +58,7 @@ export default {
         StartMenu,
         Board,
         Window,
+        About,
     },
     methods: {
         selectProject(project) {

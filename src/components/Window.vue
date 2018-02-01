@@ -22,6 +22,7 @@
 import { windowBus } from '../main';
 
 export default {
+    name: 'Window',
     data() {
         return {
             width: this.initialWidth,
