@@ -154,4 +154,13 @@ a {
     align-self: flex-end;
     color: #d90368;
 }
+
+a.highlight-link {
+    text-decoration: none;
+    font-weight: 600;
+    background: linear-gradient(to top, rgba(217, 3, 104, 0.4) 35%, transparent 35%);
+}
+a.highlight-link:hover {
+    background: #d90368;
+}
 </style>
