@@ -3,8 +3,9 @@
         :w="width"
         :x="x" :y="y"
         :minw="minwidth" :minh="minheight"
-        v-on:dragging="onDrag" v-on:resizing="onResize" class="window">
-        <div class="window-top">
+        :drag-handle="'.drag'"
+        v-on:resizing="onResize" class="window">
+        <div class="window-top drag">
             <div class="text">Project Viewer: {{project.name}}</div>
             <div class="buttons">
               <font-awesome-icon icon="window-minimize" @click="minimize" />

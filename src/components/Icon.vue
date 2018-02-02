@@ -24,6 +24,7 @@ export default {
             this.$emit('newactive', this.project.id);
         },
         selectProject() {
+            console.log(this.project);
             windowBus.$emit('projectSelected', this.project);
         },
     },

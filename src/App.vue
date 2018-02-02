@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <div class="header">Header</div>
+    <upper-bar></upper-bar>
     <div id="main">      
-      <icon v-for="project in projects"
-        :key="project.id"
-        :project="project"
-        :active="project.id === activeIcon"
-        @newactive="activeIcon = $event"
+        <icon v-for="project in projects"
+            :key="project.id"
+            :project="project"
+            :active="project.id === activeIcon"
+            @newactive="activeIcon = $event"
         >
-      </icon>
-      <project-window v-if="showProject"
-        :project="selectedProject"
-        @close="showProject = false">
-      </project-window>
-      <about></about>
+        </icon>
+        <project-window v-if="showProject"
+            :project="selectedProject"
+            @close="showProject = false">
+        </project-window>
+        <about v-if="showAbout"        
+            @close="showAbout = false"
+            type="about">
+        </about>
       <window v-if="showTic"  :initialHeight="400" :initialWidth="250" type="tic">
           <div slot="text" class="text">Tic Tac Toe</div>
           <board></board>
@@ -31,6 +34,7 @@ import projects from './projects.json';
 import projectWindow from './components/ProjectWindow';
 import About from './components/About';
 import LowerBar from './components/LowerBar';
+import UpperBar from './components/UpperBar';
 import StartMenu from './components/StartMenu';
 import Board from './components/Tic-Tac-Toe/Board';
 import Window from './components/Window.vue';
@@ -48,6 +52,7 @@ export default {
             activeIcon: null,
             showMenu: false,
             showTic: false,
+            showAbout: true,
         };
     },
     components: {
@@ -59,6 +64,7 @@ export default {
         Board,
         Window,
         About,
+        UpperBar,
     },
     methods: {
         selectProject(project) {
@@ -70,7 +76,6 @@ export default {
             this.showProject = false;
         },
         toggleMenu() {
-            console.log('yo toggle');
             this.showMenu = !this.showMenu;
         },
     },
@@ -83,6 +88,8 @@ export default {
             console.log(type);
             if (type == 'tic') {
                 this.showTic = false;
+            } else if (type == 'about') {
+                this.showAbout = false;
             } else {
                 this.selectedProject = undefined;
                 this.showProject = false;
@@ -91,6 +98,8 @@ export default {
         windowBus.$on('minimize', type => {
             if (type == 'tic') {
                 this.showTic = false;
+            } else if (type == 'about') {
+                this.showAbout = false;
             } else {
                 this.showProject = !this.showProject;
             }
@@ -98,6 +107,11 @@ export default {
         windowBus.$on('start', type => {
             if (type == 'tic') {
                 this.showTic = true;
+            } else if (type == 'project') {
+                this.selectedProject = projects['project1'];
+                this.showProject = true;
+            } else if (type == 'about') {
+                this.showAbout = true;
             }
         });
         windowBus.$on('toggleMenu', () => {
@@ -117,38 +131,12 @@ export default {
     font-family: 'Montserrat', sans-serif;
 }
 
-.header {
-    display: flex;
-    height: 30px;
-    width: 100%;
-    background-color: #011627;
-}
-
 #main {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     flex: 1;
 }
-/* 
-h1,
-h2 {
-    font-weight: normal;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-a {
-    color: #42b983;
-} */
 
 .buttons {
     align-self: flex-end;

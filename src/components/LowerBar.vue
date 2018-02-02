@@ -6,8 +6,7 @@
           <font-awesome-icon icon="eject" />
         </div>
         <div class="bar-entry" v-if="selectedProject" @click="minimize('project')">{{selectedProject.name}}</div>
-        <div class="bar-entry" v-if="tic" @click="minimize('tic')">Tic Tac Toe</div>
-        <show-time></show-time>
+        <div class="bar-entry" v-if="tic" @click="minimize('tic')">Tic Tac Toe</div>        
     </div>
 </template>
 

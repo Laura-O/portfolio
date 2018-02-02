@@ -1,6 +1,8 @@
 <template>
     <div class="startmenu">
-        <ul>
+        <ul>            
+            <li @click="startAbout">About</li>
+            <li @click="startProject">Projects</li>
             <li @click="startTic">Tic Tac Toe</li>
         </ul>
     </div>
@@ -13,6 +15,14 @@ export default {
     methods: {
         startTic() {
             windowBus.$emit('start', 'tic');
+            windowBus.$emit('toggleMenu');
+        },
+        startAbout() {
+            windowBus.$emit('start', 'about');
+            windowBus.$emit('toggleMenu');
+        },
+        startProject() {
+            windowBus.$emit('start', 'project');
             windowBus.$emit('toggleMenu');
         },
     },
