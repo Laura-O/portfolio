@@ -3,8 +3,9 @@
         :w="width"
         :x="x" :y="y"
         :minw="minwidth" :minh="minheight"
-        :drag-handle="'.drag'"
-        v-on:resizing="onResize" class="window">
+        v-on:dragging="onDrag"
+        v-on:resizing="onResize" class="window"        
+        >
         <div class="window-top drag">
             <div class="text">Project Viewer: {{project.name}}</div>
             <div class="buttons">
@@ -63,12 +64,20 @@ export default {
         close() {
             windowBus.$emit('close');
         },
+        toggleActive() {
+            this.isActive = !this.isActive;
+            console.log(this.isActive);
+        },
     },
     created() {},
 };
 </script>
 
 <style>
+.active {
+    background-color: aqua;
+}
+
 .window {
     border: solid 1px black;
     display: flex;

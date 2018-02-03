@@ -49,6 +49,7 @@ export default {
     border-right: 3px solid #011627;
     border-top-right-radius: 5px;
     font-size: 18px;
+    z-index: 9999;
 }
 
 .startmenu ul {

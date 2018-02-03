@@ -11,7 +11,8 @@
         </icon>
         <project-window v-if="showProject"
             :project="selectedProject"
-            @close="showProject = false">
+            @close="showProject = false"            
+            >
         </project-window>
         <about v-if="showAbout"        
             @close="showAbout = false"
@@ -21,7 +22,7 @@
             @close="showTerminal = false"
             type="terminal">
         </terminal>
-      <window v-if="showTic"  :initialHeight="400" :initialWidth="250" type="tic">
+      <window v-if="showTic"  :initialHeight="400" :initialWidth="250" type="tic" :z-index="zIndex">
           <div slot="text" class="text">Tic Tac Toe</div>
           <board></board>
         </window>
@@ -59,6 +60,7 @@ export default {
             showTic: false,
             showAbout: true,
             showTerminal: true,
+            selectedWindow: '',
         };
     },
     components: {
@@ -155,6 +157,10 @@ export default {
     color: #d90368;
 }
 
+.active {
+    z-index: 999 !important;
+}
+
 a.highlight-link {
     text-decoration: none;
     font-weight: 600;
@@ -162,5 +168,9 @@ a.highlight-link {
 }
 a.highlight-link:hover {
     background: #d90368;
+}
+
+.active {
+    z-index: 999;
 }
 </style>

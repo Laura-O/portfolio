@@ -1,8 +1,10 @@
 <template>
     <vue-draggable-resizable :h="height" :w="width" :x="x" :y="y"
-    :minw="minwidth" :minh="minheight" :drag-handle="'.drag'"
-    v-on:resizing="onResize" class="window">        
-        <div class="window-top drag">
+    :minw="minwidth" :minh="minheight"
+    v-on:dragging="onDrag"
+    v-on:resizing="onResize"
+    class="window">
+        <div class="window-top">
             <div class="text">About</div>
             <div class="buttons">
               <font-awesome-icon icon="window-minimize" @click="minimize" />
