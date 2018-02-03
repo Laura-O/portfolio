@@ -17,6 +17,10 @@
             @close="showAbout = false"
             type="about">
         </about>
+        <console v-if="showConsole"        
+            @close="showConsole = false"
+            type="console">
+        </console>
       <window v-if="showTic"  :initialHeight="400" :initialWidth="250" type="tic">
           <div slot="text" class="text">Tic Tac Toe</div>
           <board></board>
@@ -37,6 +41,7 @@ import LowerBar from './components/LowerBar';
 import UpperBar from './components/UpperBar';
 import StartMenu from './components/StartMenu';
 import Board from './components/Tic-Tac-Toe/Board';
+import Console from './components/Console';
 import Window from './components/Window.vue';
 import { windowBus } from './main';
 
@@ -53,6 +58,7 @@ export default {
             showMenu: false,
             showTic: false,
             showAbout: true,
+            showConsole: true,
         };
     },
     components: {
@@ -65,6 +71,7 @@ export default {
         Window,
         About,
         UpperBar,
+        Console,
     },
     methods: {
         selectProject(project) {
