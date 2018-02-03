@@ -6,7 +6,9 @@
           <font-awesome-icon icon="eject" />
         </div>
         <div class="bar-entry" v-if="selectedProject" @click="minimize('project')">{{selectedProject.name}}</div>
-        <div class="bar-entry" v-if="tic" @click="minimize('tic')">Tic Tac Toe</div>        
+        <div class="bar-entry" v-if="tic" @click="minimize('tic')">Tic Tac Toe</div>
+        <div class="bar-entry" v-if="about" @click="minimize('about')">About me</div>
+        <div class="bar-entry" v-if="terminal" @click="minimize('terminal')">Terminal</div>        
     </div>
 </template>
 
@@ -15,7 +17,7 @@ import { windowBus } from '../main';
 import ShowTime from './ShowTime';
 
 export default {
-    props: ['showProject', 'selectedProject', 'tic'],
+    props: ['showProject', 'selectedProject', 'tic', 'about', 'terminal'],
     components: {
         ShowTime,
     },

@@ -17,17 +17,17 @@
             @close="showAbout = false"
             type="about">
         </about>
-        <console v-if="showConsole"        
-            @close="showConsole = false"
-            type="console">
-        </console>
+        <terminal v-if="showTerminal"        
+            @close="showTerminal = false"
+            type="terminal">
+        </terminal>
       <window v-if="showTic"  :initialHeight="400" :initialWidth="250" type="tic">
           <div slot="text" class="text">Tic Tac Toe</div>
           <board></board>
         </window>
       <start-menu v-if="showMenu"></start-menu>
     </div>
-    <lower-bar :showProject="showProject" :tic="this.showTic" :selectedProject="selectedProject" v-on:toggleMenu="toggleMenu"></lower-bar>
+    <lower-bar :showProject="showProject" :tic="this.showTic" :terminal="this.showTerminal" :about="this.showAbout" :selectedProject="selectedProject" v-on:toggleMenu="toggleMenu"></lower-bar>
   </div>
 </template>
 
@@ -41,7 +41,7 @@ import LowerBar from './components/LowerBar';
 import UpperBar from './components/UpperBar';
 import StartMenu from './components/StartMenu';
 import Board from './components/Tic-Tac-Toe/Board';
-import Console from './components/Console';
+import Terminal from './components/Terminal';
 import Window from './components/Window.vue';
 import { windowBus } from './main';
 
@@ -58,7 +58,7 @@ export default {
             showMenu: false,
             showTic: false,
             showAbout: true,
-            showConsole: true,
+            showTerminal: true,
         };
     },
     components: {
@@ -71,7 +71,7 @@ export default {
         Window,
         About,
         UpperBar,
-        Console,
+        Terminal,
     },
     methods: {
         selectProject(project) {
@@ -92,11 +92,12 @@ export default {
             this.showProject = true;
         });
         windowBus.$on('close', type => {
-            console.log(type);
             if (type == 'tic') {
                 this.showTic = false;
             } else if (type == 'about') {
                 this.showAbout = false;
+            } else if (type == 'terminal') {
+                this.showTerminal = false;
             } else {
                 this.selectedProject = undefined;
                 this.showProject = false;
@@ -107,6 +108,8 @@ export default {
                 this.showTic = false;
             } else if (type == 'about') {
                 this.showAbout = false;
+            } else if (type == 'terminal') {
+                this.showTerminal = false;
             } else {
                 this.showProject = !this.showProject;
             }
@@ -117,6 +120,8 @@ export default {
             } else if (type == 'project') {
                 this.selectedProject = projects['project1'];
                 this.showProject = true;
+            } else if (type == 'terminal') {
+                this.showTerminal = true;
             } else if (type == 'about') {
                 this.showAbout = true;
             }

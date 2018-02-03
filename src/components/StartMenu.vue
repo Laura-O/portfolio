@@ -3,6 +3,7 @@
         <ul>            
             <li @click="startAbout"><font-awesome-icon icon="smile" /> About me</li>
             <li @click="startProject"><font-awesome-icon icon="keyboard" /> Projects</li>
+            <li @click="startTerminal"><font-awesome-icon icon="terminal" /> Terminal</li>
             <li @click="startTic"><font-awesome-icon icon="gamepad" /> Tic Tac Toe</li>
         </ul>
     </div>
@@ -23,6 +24,10 @@ export default {
         },
         startProject() {
             windowBus.$emit('start', 'project');
+            windowBus.$emit('toggleMenu');
+        },
+        startTerminal() {
+            windowBus.$emit('start', 'terminal');
             windowBus.$emit('toggleMenu');
         },
     },

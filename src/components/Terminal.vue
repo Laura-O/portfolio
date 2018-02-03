@@ -10,13 +10,13 @@
             </div>
         </div>
         <div class="window-content">
-            <div class="console-wrapper">
-                <div class="console-history">
+            <div class="terminal-wrapper">
+                <div class="terminal-history">
                     <pre>{{ history }}</pre>
                 </div>
-                <div class="console-input">
-		            <span>dev$ </span>
-		            <textarea class="console-input"
+                <div class="terminal-input">
+		            <span>user:~$ </span>
+		            <textarea class="terminal-input"
                         name="input"
                         cols="30" rows="1"
                         v-model="command"
@@ -33,7 +33,7 @@
 import { windowBus } from '../main';
 
 export default {
-    name: 'Window',
+    name: 'Terminal',
     data() {
         return {
             width: this.initialWidth,
@@ -45,6 +45,20 @@ export default {
             currentType: this.type,
             command: '',
             history: '',
+            options: [
+                {
+                    cmd: 'clear',
+                    desc: 'Clear the screen',
+                },
+                {
+                    cmd: 'date',
+                    desc: 'Return current date',
+                },
+                {
+                    cmd: 'help',
+                    desc: 'List of available commands',
+                },
+            ],
         };
     },
     props: ['initialWidth', 'initialHeight', 'type'],
@@ -66,16 +80,29 @@ export default {
             windowBus.$emit('close', this.currentType);
         },
         submit() {
-            console.log(this.command);
-            this.history += this.command;
+            let currentCommand = this.command.trim();
+            if (this[currentCommand]) {
+                this[currentCommand]();
+            } else {
+                this.history += `Command not found: ${currentCommand}  \n`;
+            }
             this.command = '';
-            console.log(this.history);
+        },
+        clear() {
+            this.history = '';
+        },
+        date() {
+            this.history += `${new Date().toString()}\n`;
         },
     },
 };
 </script>
 
 <style scoped>
+pre {
+    font-family: 'Inconsolata', monospace;
+    font-size: 16px;
+}
 .window {
     border: solid 2px black;
     display: flex;
@@ -106,21 +133,22 @@ export default {
 .window-content {
     background-color: #000;
     color: #fff;
-    font-family: Inconsolata, monospace;
-    font-size: 12px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 16px;
     height: 100%;
 }
 
-.console-input {
+.terminal-input {
     display: flex;
 }
 
-.console-input textarea {
+.terminal-input textarea {
     color: #fff;
-    border: solid 1px red;
     outline: 0;
+    border: 0;
     background-color: transparent;
     font-family: inherit;
+    font-size: 16px;
     width: 100%;
     resize: none;
 }
