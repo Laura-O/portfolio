@@ -14,21 +14,21 @@
             @close="showProject = false"            
             >
         </project-window>
-        <about v-if="showAbout"        
+        <about v-if="showAboutWindow"   
             @close="showAbout = false"
             type="about">
         </about>
-        <terminal v-if="showTerminal"        
+        <terminal v-if="showTerminalWindow"        
             @close="showTerminal = false"
             type="terminal">
         </terminal>
-      <window v-if="showTic"  :initialHeight="400" :initialWidth="250" type="tic" :z-index="zIndex">
+      <window v-if="showTicWindow"  :initialHeight="400" :initialWidth="250" type="tic" :z-index="zIndex">
           <div slot="text" class="text">Tic Tac Toe</div>
           <board></board>
         </window>
       <start-menu v-if="showMenu"></start-menu>
     </div>
-    <lower-bar :showProject="showProject" :tic="this.showTic" :terminal="this.showTerminal" :about="this.showAbout" :selectedProject="selectedProject" v-on:toggleMenu="toggleMenu"></lower-bar>
+    <lower-bar :showProject="showProject" :tic="showTicEntry" :terminal="this.showTerminalEntry" :about="this.showAboutEntry" :selectedProject="selectedProject" v-on:toggleMenu="toggleMenu"></lower-bar>
   </div>
 </template>
 
@@ -57,10 +57,12 @@ export default {
             selectedProject: undefined,
             activeIcon: null,
             showMenu: false,
-            showTic: false,
-            showAbout: true,
-            showTerminal: true,
-            selectedWindow: '',
+            showTicWindow: false,
+            showTicEntry: false,
+            showAboutWindow: false,
+            showAboutEntry: false,
+            showTerminalWindow: false,
+            showTerminalEntry: false,
         };
     },
     components: {
@@ -95,11 +97,14 @@ export default {
         });
         windowBus.$on('close', type => {
             if (type == 'tic') {
-                this.showTic = false;
+                this.showTicWindow = false;
+                this.showTicEntry = false;
             } else if (type == 'about') {
-                this.showAbout = false;
+                this.showAboutWindow = false;
+                this.showAboutEntry = false;
             } else if (type == 'terminal') {
-                this.showTerminal = false;
+                this.showTerminalWindow = false;
+                this.showTerminalEntry = false;
             } else {
                 this.selectedProject = undefined;
                 this.showProject = false;
@@ -107,25 +112,28 @@ export default {
         });
         windowBus.$on('minimize', type => {
             if (type == 'tic') {
-                this.showTic = false;
+                this.showTicWindow = !this.showTicWindow;
             } else if (type == 'about') {
-                this.showAbout = false;
+                this.showAboutWindow = !this.showAboutWindow;
             } else if (type == 'terminal') {
-                this.showTerminal = false;
+                this.showTerminalWindow = !this.showTerminalWindow;
             } else {
                 this.showProject = !this.showProject;
             }
         });
         windowBus.$on('start', type => {
             if (type == 'tic') {
-                this.showTic = true;
+                this.showTicWindow = true;
+                this.showTicEntry = true;
             } else if (type == 'project') {
                 this.selectedProject = projects['project1'];
                 this.showProject = true;
             } else if (type == 'terminal') {
-                this.showTerminal = true;
+                this.showTerminalWindow = true;
+                this.showTerminalEntry = true;
             } else if (type == 'about') {
-                this.showAbout = true;
+                this.showAboutWindow = true;
+                this.showAboutEntry = true;
             }
         });
         windowBus.$on('toggleMenu', () => {

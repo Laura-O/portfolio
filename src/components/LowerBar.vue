@@ -26,7 +26,6 @@ export default {
             windowBus.$emit('minimize', type);
         },
         showStartMenu: function() {
-            console.log('button clicked');
             this.$emit('toggleMenu');
         },
     },
