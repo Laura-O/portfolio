@@ -86,6 +86,7 @@ export default {
         },
         submit() {
             let currentCommand = this.command.trim();
+            this.history += `user:~$ ${currentCommand} \n`;
             if (this[currentCommand]) {
                 this[currentCommand]();
             } else {
@@ -107,7 +108,7 @@ export default {
             this.history += `${new Date().toString()}\n`;
         },
         ls() {
-            this.history += this.files;
+            this.history += `${this.files} \n`;
         },
         about() {
             windowBus.$emit('start', 'about');
