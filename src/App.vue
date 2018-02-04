@@ -22,7 +22,7 @@
             @close="showTerminal = false"
             type="terminal">
         </terminal>
-      <window v-if="showTicWindow"  :initialHeight="400" :initialWidth="250" type="tic" :z-index="zIndex">
+      <window v-if="showTicWindow"  :initialHeight="400" :initialWidth="250" type="tic">
           <div slot="text" class="text">Tic Tac Toe</div>
           <board></board>
         </window>
