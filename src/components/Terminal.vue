@@ -45,6 +45,7 @@ export default {
             currentType: this.type,
             command: '',
             history: '',
+            files: 'about projects tictactoe',
             options: [
                 {
                     cmd: 'clear',
@@ -57,6 +58,10 @@ export default {
                 {
                     cmd: 'help',
                     desc: 'List of available commands',
+                },
+                {
+                    cmd: 'ls',
+                    desc: 'List files',
                 },
             ],
         };
@@ -88,11 +93,30 @@ export default {
             }
             this.command = '';
         },
+        help() {
+            let list = '';
+            for (let name of this.options) {
+                list += `${name.cmd}\t- ${name.desc}\n`;
+            }
+            this.history += `Available commands: \n\n${list}\n`;
+        },
         clear() {
             this.history = '';
         },
         date() {
             this.history += `${new Date().toString()}\n`;
+        },
+        ls() {
+            this.history += this.files;
+        },
+        about() {
+            windowBus.$emit('start', 'about');
+        },
+        projects() {
+            windowBus.$emit('start', 'project');
+        },
+        tictactoe() {
+            windowBus.$emit('start', 'tic');
         },
     },
 };
