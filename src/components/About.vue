@@ -11,10 +11,12 @@
               <font-awesome-icon icon="window-close" @click="close" />
             </div>
         </div>
-        <div class="window-content">
-            <slot>
-              I am a slot!
-              </slot>
+        <div class="window-content">            
+            <h2>Welcome!</h2>
+            <div class="bio-paragraph">My name is Laura Ohrndorf and I am a full stack developer with a passion for beautiful frontends.</div>
+            <div class="bio-paragraph">You can view some of my projects by clicking on the icons on the desktop.</div>
+            <div class="bio-paragraph">You can also follow me on <a class="highlight-link" target="_blank" v-bind:href="github"> GitHub </a></div>
+          <div></div>
         </div>
       <div class="window-bottom"></div>
     </vue-draggable-resizable>
@@ -29,11 +31,12 @@ export default {
         return {
             width: this.initialWidth,
             height: this.initialHeight,
-            minwidth: 200,
-            minheight: 200,
+            minwidth: 400,
+            minheight: 300,
             x: 200,
             y: 200,
             currentType: this.type,
+            github: 'https://github.com/Laura-O',
         };
     },
     props: ['initialWidth', 'initialHeight', 'type'],

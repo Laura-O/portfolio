@@ -74,10 +74,6 @@ export default {
 </script>
 
 <style>
-.active {
-    background-color: aqua;
-}
-
 .window {
     border: solid 1px black;
     display: flex;

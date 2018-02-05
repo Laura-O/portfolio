@@ -22,13 +22,20 @@
             @close="showTerminal = false"
             type="terminal">
         </terminal>
-      <window v-if="showTicWindow"  :initialHeight="400" :initialWidth="250" type="tic">
+      <window v-if="showTicWindow" :initialHeight="400" :initialWidth="300" type="tic">
           <div slot="text" class="text">Tic Tac Toe</div>
           <board></board>
         </window>
       <start-menu v-if="showMenu"></start-menu>
     </div>
-    <lower-bar :showProject="showProject" :tic="showTicEntry" :terminal="this.showTerminalEntry" :about="this.showAboutEntry" :selectedProject="selectedProject" v-on:toggleMenu="toggleMenu"></lower-bar>
+    <lower-bar
+        :showProject="showProject"
+        :tic="showTicEntry"
+        :terminal="this.showTerminalEntry"
+        :about="this.showAboutEntry"
+        :selectedProject="selectedProject"
+        v-on:toggleMenu="toggleMenu">
+    </lower-bar>
   </div>
 </template>
 
@@ -59,8 +66,8 @@ export default {
             showMenu: false,
             showTicWindow: false,
             showTicEntry: false,
-            showAboutWindow: false,
-            showAboutEntry: false,
+            showAboutWindow: true,
+            showAboutEntry: true,
             showTerminalWindow: false,
             showTerminalEntry: false,
         };
@@ -158,7 +165,7 @@ export default {
     flex-direction: column;
     flex-wrap: wrap-reverse;
     justify-content: flex-end;
-    align-content: flex-start;
+    align-content: flex-end;
     flex: 1;
     padding-bottom: 15px;
     max-height: 95vh;
@@ -180,9 +187,5 @@ a.highlight-link {
 }
 a.highlight-link:hover {
     background: #d90368;
-}
-
-.active {
-    z-index: 999;
 }
 </style>

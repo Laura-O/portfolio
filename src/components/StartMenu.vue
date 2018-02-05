@@ -44,6 +44,8 @@ export default {
     height: 300px;
     margin-top: 0;
     position: absolute;
+    bottom: 30px;
+    left: 0px;
     z-index: 1;
     border-top: 3px solid #011627;
     border-right: 3px solid #011627;

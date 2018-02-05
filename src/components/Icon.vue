@@ -32,8 +32,7 @@ export default {
 };
 </script>
 
-
-<style>
+<style scoped>
 .icon {
     width: 70px;
     height: 70px;
@@ -55,6 +54,7 @@ export default {
 
 .active {
     border: 1px solid black;
+    background: transparent;
 }
 
 .icon-title {
