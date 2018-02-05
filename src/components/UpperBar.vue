@@ -24,4 +24,8 @@ export default {
     width: 100%;
     background-color: #011627;
 }
+
+.time {
+    margin-right: 10px;
+}
 </style>
