@@ -162,9 +162,8 @@ export default {
 
 #main {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap-reverse;
-    justify-content: flex-end;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     align-content: flex-end;
     flex: 1;
     padding-bottom: 15px;
