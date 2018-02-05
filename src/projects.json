@@ -48,7 +48,7 @@
     "description":
       "This is an interactive bubble diagram I created from a database export of the World Cube Association (WCA). It visualizes the competitors who attended the most competitions.",
     "techs": ["D3.js", "R", "Bootstrap"],
-    "image": "./static/projects/d3_stats/d3-stats-_thumb.png",
+    "image": "./static/projects/d3_stats/d3-stats.png",
     "thumbnail": "./static/projects/d3_stats/d3-stats_thumb.png",
     "show": false
   }
