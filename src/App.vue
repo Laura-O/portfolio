@@ -156,8 +156,12 @@ export default {
 #main {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap-reverse;
     justify-content: flex-end;
+    align-content: flex-start;
     flex: 1;
+    padding-bottom: 15px;
+    max-height: 95vh;
 }
 
 .buttons {

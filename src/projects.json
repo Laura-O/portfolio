@@ -32,7 +32,7 @@
   },
   "project4": {
     "id": 4,
-    "name": "Mobile flash cards",
+    "name": "Mobile flashcards",
     "url": "",
     "description":
       "A simple flashcard App built with React Native. You can create decks with questions, add questions and take a quiz. There is also a function to create daily reminders.",

@@ -5,6 +5,7 @@
         :class="[{'active': active}, 'icon']"
         >
       <img v-bind:src="project.thumbnail" />
+      <p class="icon-title">{{project.name}}</p>
     </div>
 </template>
 
@@ -34,12 +35,11 @@ export default {
 
 <style>
 .icon {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
-    align-self: flex-end;
-    justify-content: flex-center;
-    margin: 10px;
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    margin: 15px 10px 15px 10px;
+    padding: 10px;
 }
 
 .icon.active {
@@ -47,11 +47,23 @@ export default {
 }
 
 .icon img {
-    width: 100%;
-    height: 100%;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: auto;
 }
 
 .active {
     border: 1px solid black;
+}
+
+.icon-title {
+    color: white;
+    font-size: 10px;
+    font-weight: 900;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+    width: 100%;
 }
 </style>
