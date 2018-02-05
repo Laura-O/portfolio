@@ -1,21 +1,22 @@
 {
   "project1": {
     "id": 1,
-    "name": "Petition",
-    "url": "https://peachtition.herokuapp.com/",
-    "description": "This is a cool project I made!",
-    "techs": ["Express", "PostgreSQL", "Redis", "Handlebars", "JQuery"],
-    "image": "./static/projects/petition/landing_page.png",
-    "thumbnail": "./static/projects/petition/landing_page_thumb.png",
+    "name": "Portfolio Website",
+    "url": "http://www.laura.fyi",
+    "description": "This is my portfolio website. Look around to see the features!",
+    "techs": ["Vue.js"],
+    "image": "./static/projects/portfolio/portfolio.png",
+    "thumbnail": "./static/projects/portfolio/portfolio_thumb.png",
     "show": false
   },
   "project2": {
     "id": 2,
-    "name": "Portfolio Website",
-    "url": "http://www.google.de",
-    "description": "This is my portfolio.",
-    "techs": ["Vue.js"],
-    "image": "http://www",
+    "name": "Petition",
+    "url": "https://peachtition.herokuapp.com/",
+    "description":
+      "This is a website for a petition. Users can register, add information to their profile and sign the petition.",
+    "techs": ["Express", "PostgreSQL", "Redis", "Handlebars", "JQuery"],
+    "image": "./static/projects/petition/landing_page.png",
     "thumbnail": "./static/projects/petition/landing_page_thumb.png",
     "show": false
   },
@@ -23,7 +24,7 @@
     "id": 3,
     "name": "Connect 4",
     "url": "https://connect-4-game.herokuapp.com/",
-    "description": "2-player Connect 4 game",
+    "description": "This is an implementation of the classic Connect-4 game for 2 players.",
     "techs": ["JQuery", "CSS", "HTML"],
     "image": "./static/projects/connect-4/connect-4.png",
     "thumbnail": "./static/projects/connect-4/connect-4_thumb.png",
@@ -33,8 +34,9 @@
     "id": 4,
     "name": "Mobile flash cards",
     "url": "",
-    "description": "that's the most awesome project!",
-    "techs": ["React Native"],
+    "description":
+      "A simple flashcard App built with React Native. You can create decks with questions, add questions and take a quiz. There is also a function to create daily reminders.",
+    "techs": ["React Native", "React Redux"],
     "image": "./static/projects/mobile_flashcards/quiz_page.png",
     "thumbnail": "./static/projects/mobile_flashcards/quiz_page_thumb.png",
     "show": false
@@ -43,7 +45,8 @@
     "id": 5,
     "name": "Bubble diagram D3.js",
     "url": "http://secure-meadow-44103.herokuapp.com/",
-    "description": "Yippie",
+    "description":
+      "This is an interactive bubble diagram I created from a database export of the World Cube Association (WCA). It visualizes the competitors who attended the most competitions.",
     "techs": ["D3.js", "R", "Bootstrap"],
     "image": "./static/projects/d3_stats/d3-stats-_thumb.png",
     "thumbnail": "./static/projects/d3_stats/d3-stats_thumb.png",
