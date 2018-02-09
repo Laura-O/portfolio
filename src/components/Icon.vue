@@ -43,6 +43,8 @@ export default {
 
 .icon.active {
     border: 1px solid black;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0 !important;
 }
 
 .icon img {
@@ -50,11 +52,6 @@ export default {
     height: 50px;
     display: block;
     margin: auto;
-}
-
-.active {
-    border: 1px solid black;
-    background: rgba(0, 0, 0, 0.5);
 }
 
 .icon-title {
