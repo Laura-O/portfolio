@@ -54,7 +54,7 @@ export default {
 
 .active {
     border: 1px solid black;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .icon-title {
