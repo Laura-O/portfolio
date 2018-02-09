@@ -14,7 +14,8 @@
             @close="showProject = false"            
             >
         </project-window>
-        <about v-if="showAboutWindow"   
+        <about v-if="showAboutWindow"
+            :initialHeight="currentHeight/2" :initialWidth="currentWidth/1.5"
             @close="showAbout = false"
             type="about">
         </about>
@@ -70,6 +71,8 @@ export default {
             showAboutEntry: true,
             showTerminalWindow: false,
             showTerminalEntry: false,
+            currentHeight: window.innerHeight,
+            currentWidth: window.innerWidth,
         };
     },
     components: {
@@ -95,6 +98,7 @@ export default {
         },
         toggleMenu() {
             this.showMenu = !this.showMenu;
+            console.log(window.innerHeight, window.innerWidth);
         },
     },
     created() {
@@ -177,6 +181,10 @@ export default {
 
 .active {
     z-index: 999 !important;
+}
+
+.handle {
+    background: transparent !important;
 }
 
 a.highlight-link {
