@@ -14,7 +14,9 @@ export default {
     methods: {
         updateTime() {
             let time = new Date();
-            this.currentTime = time.getHours() + ' : ' + time.getMinutes();
+            function leading_zero(minutes) {}
+            this.currentTime =
+                time.getHours() + ' : ' + (time.getMinutes() < 10 ? '0' : '') + time.getMinutes();
         },
     },
     created: function() {
