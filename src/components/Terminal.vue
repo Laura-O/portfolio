@@ -177,4 +177,9 @@ pre {
     width: 100%;
     resize: none;
 }
+
+.terminal-input span {
+    margin-top: 2px;
+    margin-right: 2px;
+}
 </style>
