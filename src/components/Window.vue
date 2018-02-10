@@ -5,7 +5,7 @@
         <div class="window-top">
             <slot name="text"></slot>            
             <div class="buttons">
-              <font-awesome-icon icon="window-minimize" @click="minimize" />
+              <font-awesome-icon icon="window-minimize" @click="minimize" class="minimize" />
               <font-awesome-icon icon="window-close" @click="close" />
             </div>
         </div>
@@ -82,6 +82,10 @@ export default {
 .buttons {
     align-self: flex-end;
     color: #d90368;
+}
+
+.buttons div:hover {
+    transform: scale(1.1);
 }
 
 .window-bottom {

@@ -12,6 +12,7 @@
         <project-window v-if="showProject"
             :project="selectedProject"
             @close="showProject = false"            
+            :initialHeight="currentHeight/1.8" :initialWidth="currentWidth/1.5"
             >
         </project-window>
         <about v-if="showAboutWindow"
@@ -194,5 +195,15 @@ a.highlight-link {
 }
 a.highlight-link:hover {
     background: #d90368;
+}
+
+.fa-window-minimize:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.fa-window-close:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 </style>

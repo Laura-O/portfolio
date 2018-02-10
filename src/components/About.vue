@@ -12,9 +12,9 @@
             </div>
         </div>
         <div class="window-content">            
-            <h2>Welcome!</h2>
-            <div class="bio-paragraph">My name is Laura Ohrndorf and I am a full stack developer with a passion for beautiful frontends.</div>
-            <div class="bio-paragraph">You can view some of my projects by clicking on the icons on the desktop.</div>
+            <h2>Hi, I am Laura!</h2>
+            <div class="bio-paragraph">I am a full stack developer with a passion for beautiful frontends and innovative designs.</div>
+            <div class="bio-paragraph">You can view some of my projects by clicking on the icons on the desktop. Don't forget to click on the start menu!</div>
             <div class="bio-paragraph">You can also follow me on <a class="highlight-link" target="_blank" v-bind:href="github"> GitHub </a></div>
           <div></div>
         </div>
@@ -82,6 +82,10 @@ export default {
 .window-content {
     padding: 10px;
     overflow-y: auto;
+}
+
+.bio-paragraph {
+    margin-top: 10px;
 }
 
 .buttons {

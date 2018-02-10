@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <div class="logo buttons"
+        <div class="logo buttons start-menu"
           v-on:click="showStartMenu"          
         >
           <font-awesome-icon icon="eject" />
@@ -59,5 +59,11 @@ export default {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: center;
+    cursor: pointer;
+}
+
+.start-menu {
+    cursor: pointer;
 }
 </style>

@@ -38,15 +38,15 @@ import { windowBus } from '../main';
 export default {
     data() {
         return {
-            width: 400,
-            height: 400,
+            width: this.initialWidth,
+            height: this.initialHeight,
             minwidth: 200,
             minheight: 200,
             x: 100,
             y: 100,
         };
     },
-    props: ['project'],
+    props: ['initialWidth', 'initialHeight', 'project'],
     methods: {
         onResize(x, y, width, height) {
             this.x = x;
