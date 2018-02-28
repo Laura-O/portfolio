@@ -13,11 +13,13 @@
             :project="selectedProject"
             @close="showProject = false"            
             :initialHeight="300" :initialWidth="400"
+            :class="{major:selectedProject !== undefined}"
             >
         </project-window>
         <about v-if="showAboutWindow"
             :initialHeight="300" :initialWidth="400"
             @close="showAbout = false"
+            :class="{minor:selectedProject !== undefined}"
             type="about">
         </about>
         <terminal v-if="showTerminalWindow"        
@@ -182,6 +184,14 @@ export default {
 
 .active {
     z-index: 999 !important;
+}
+
+.major {
+    z-index: 998 !important;
+}
+
+.minor {
+    z-index: 997 !important;
 }
 
 .handle {

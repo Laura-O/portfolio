@@ -103,7 +103,7 @@ export default {
 
 .window-bottom {
     height: 20px;
-    background-color: #232630;
+    background-color: #828081;
 }
 
 div.project-image {
