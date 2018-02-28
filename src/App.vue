@@ -74,9 +74,11 @@ export default {
             showAboutEntry: true,
             showTerminalWindow: false,
             showTerminalEntry: false,
-            currentHeight: window.innerHeight,
-            currentWidth: window.innerWidth,
         };
+    },
+    computed: {
+        currentWidth: function () { return window.innerWidth },
+        currentHeight: function () { return window.innerHeight }
     },
     components: {
         icon,
@@ -101,7 +103,7 @@ export default {
         },
         toggleMenu() {
             this.showMenu = !this.showMenu;
-            console.log(window.innerHeight, window.innerWidth);
+
         },
     },
     created() {

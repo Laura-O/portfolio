@@ -58,7 +58,7 @@ export default {
         };
     },
     methods: {
-        handleClick: function(el) {
+        handleClick: function (el) {
             this.gameState[el.target.id] = !this.player ? 'X' : 'O';
             this.player = !this.player;
             this.checkForWin(this.squares);
@@ -73,7 +73,6 @@ export default {
                     currentState[condition[1]] === currentState[condition[2]] &&
                     currentState[condition[0]] != ''
                 ) {
-                    console.log('won!');
                     this.winner = this.player ? 'X' : 'O';
                     return true;
                 }

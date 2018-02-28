@@ -29,8 +29,8 @@ export default {
             height: this.initialHeight,
             minwidth: 200,
             minheight: 200,
-            x: 200,
-            y: 200,
+            x: window.innerWidth / 3,
+            y: window.innerWidth / 2,
             currentType: this.type,
         };
     },
