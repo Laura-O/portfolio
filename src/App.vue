@@ -235,15 +235,20 @@ export default {
 
 a.highlight-link {
     text-decoration: none;
-    font-weight: 600;
+    color: black;
     background: linear-gradient(
         to top,
         rgba(217, 3, 104, 0.4) 35%,
         transparent 35%
     );
 }
+
 a.highlight-link:hover {
-    background: #d90368;
+    background: linear-gradient(
+        to top,
+        rgba(217, 3, 104, 0.4) 100%,
+        transparent 45%
+    );
 }
 
 .fa-window-minimize:hover {

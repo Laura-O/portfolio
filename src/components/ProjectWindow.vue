@@ -23,7 +23,7 @@
             <div class="project-description">{{project.description}}</div>
 
             <div class="project-link">
-                <h4>URL</h4><a v-bind:href="project.url">{{project.url}}</a>
+                <h4>URL</h4><a class="highlight-link" v-bind:href="project.url">{{project.url}}</a>
             </div>
 
             <h4>Tech used:</h4>
