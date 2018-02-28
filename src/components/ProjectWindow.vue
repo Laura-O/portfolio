@@ -69,7 +69,7 @@ export default {
             console.log(this.isActive);
         },
     },
-    created() {},
+    created() { },
 };
 </script>
 
@@ -84,7 +84,7 @@ export default {
 
 .window-top {
     min-height: 20px;
-    background-color: #011627;
+    background-color: #828081;
     color: white;
     padding: 2px 5px;
     display: flex;
@@ -98,12 +98,12 @@ export default {
 
 .buttons {
     align-self: flex-end;
-    color: #d90368;
+    color: #fff;
 }
 
 .window-bottom {
     height: 20px;
-    background-color: #011627;
+    background-color: #232630;
 }
 
 div.project-image {

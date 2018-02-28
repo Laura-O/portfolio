@@ -22,7 +22,7 @@ export default {
     margin-right: 10px;
     height: 30px;
     width: 100%;
-    background-color: #011627;
+    background-color: #828081;
 }
 
 .time {

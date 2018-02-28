@@ -5,7 +5,7 @@
     v-on:resizing="onResize"
     class="window">
         <div class="window-top">
-            <div class="text">About</div>
+            <div class="text"><font-awesome-icon icon="user" class="user-icon"/>About</div>
             <div class="buttons">
               <font-awesome-icon icon="window-minimize" @click="minimize" />
               <font-awesome-icon icon="window-close" @click="close" />
@@ -24,6 +24,7 @@
 
 <script>
 import { windowBus } from '../main';
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 
 export default {
     name: 'Window',
@@ -31,14 +32,15 @@ export default {
         return {
             width: this.initialWidth,
             height: this.initialHeight,
-            minwidth: 400,
+            minwidth: 200,
             minheight: 300,
-            x: 200,
+            x: window.innerWidth / 2 - 200,
             y: 200,
             currentType: this.type,
             github: 'https://github.com/Laura-O',
         };
     },
+    component: [FontAwesomeIcon],
     props: ['initialWidth', 'initialHeight', 'type'],
     methods: {
         onResize(x, y, width, height) {
@@ -63,7 +65,7 @@ export default {
 
 <style>
 .window {
-    border: solid 2px black;
+    /* border: solid 2px black; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -72,8 +74,8 @@ export default {
 
 .window-top {
     min-height: 20px;
-    background-color: #011627;
-    color: white;
+    background-color: #828081;
+    color: #0a1612;
     padding: 2px 5px;
     display: flex;
     justify-content: space-between;
@@ -90,11 +92,15 @@ export default {
 
 .buttons {
     align-self: flex-end;
-    color: #d90368;
+    color: #232630;
 }
 
 .window-bottom {
     height: 20px;
-    background-color: #011627;
+    background-color: #828081;
+}
+
+.user-icon {
+    padding-right: 10px;
 }
 </style>

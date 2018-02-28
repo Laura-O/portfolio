@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    data: function() {
+    data: function () {
         return {
             currentTime: '',
         };
@@ -14,12 +14,12 @@ export default {
     methods: {
         updateTime() {
             let time = new Date();
-            function leading_zero(minutes) {}
+            function leading_zero(minutes) { }
             this.currentTime =
                 time.getHours() + ' : ' + (time.getMinutes() < 10 ? '0' : '') + time.getMinutes();
         },
     },
-    created: function() {
+    created: function () {
         setInterval(this.updateTime, 60 * 1000);
     },
     beforeMount() {
@@ -30,7 +30,7 @@ export default {
 
 <style>
 .time {
-    color: #d90368;
+    color: #000;
     right: 0;
     float: right;
     vertical-align: middle;

@@ -25,7 +25,7 @@ export default {
         minimize(type) {
             windowBus.$emit('minimize', type);
         },
-        showStartMenu: function() {
+        showStartMenu: function () {
             this.$emit('toggleMenu');
         },
     },
@@ -35,7 +35,7 @@ export default {
 <style>
 .footer {
     color: white;
-    background-color: #011627;
+    background-color: #828081;
     padding-left: 5px;
     padding-right: 5px;
     height: 30px;
@@ -50,7 +50,8 @@ export default {
 .bar-entry {
     display: inline-block;
     vertical-align: middle;
-    background-color: #d90368;
+    background-color: #aaa8a9;
+    color: #000;
     border-radius: 2px;
     margin: 1px;
     padding: 1px;

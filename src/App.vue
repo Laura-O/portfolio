@@ -12,11 +12,11 @@
         <project-window v-if="showProject"
             :project="selectedProject"
             @close="showProject = false"            
-            :initialHeight="currentHeight/1.8" :initialWidth="currentWidth/1.5"
+            :initialHeight="300" :initialWidth="400"
             >
         </project-window>
         <about v-if="showAboutWindow"
-            :initialHeight="currentHeight/2" :initialWidth="currentWidth/1.5"
+            :initialHeight="300" :initialWidth="400"
             @close="showAbout = false"
             type="about">
         </about>
@@ -160,8 +160,8 @@ export default {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #2a628f;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-color: #232630;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='32' viewBox='0 0 16 32'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath fill-rule='evenodd' d='M0 24h4v2H0v-2zm0 4h6v2H0v-2zm0-8h2v2H0v-2zM0 0h4v2H0V0zm0 4h2v2H0V4zm16 20h-6v2h6v-2zm0 4H8v2h8v-2zm0-8h-4v2h4v-2zm0-20h-6v2h6V0zm0 4h-4v2h4V4zm-2 12h2v2h-2v-2zm0-8h2v2h-2V8zM2 8h10v2H2V8zm0 8h10v2H2v-2zm-2-4h14v2H0v-2zm4-8h6v2H4V4zm0 16h6v2H4v-2zM6 0h2v2H6V0zm0 24h2v2H6v-2z'/%3E%3C/g%3E%3C/svg%3E");
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -191,7 +191,11 @@ export default {
 a.highlight-link {
     text-decoration: none;
     font-weight: 600;
-    background: linear-gradient(to top, rgba(217, 3, 104, 0.4) 35%, transparent 35%);
+    background: linear-gradient(
+        to top,
+        rgba(217, 3, 104, 0.4) 35%,
+        transparent 35%
+    );
 }
 a.highlight-link:hover {
     background: #d90368;
