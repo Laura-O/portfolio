@@ -12,7 +12,7 @@
         <project-window v-if="showProject"
             :project="selectedProject"
             @close="showProject = false"            
-            :initialHeight="300" :initialWidth="400"
+            :initialHeight="400" :initialWidth="400"
             :class="{major:selectedProject !== undefined}"
             >
         </project-window>
@@ -167,6 +167,13 @@ export default {
     font-family: 'Montserrat', sans-serif;
 }
 
+.window {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+}
+
 #main {
     display: flex;
     flex-wrap: wrap;
@@ -179,7 +186,35 @@ export default {
 
 .buttons {
     align-self: flex-end;
-    color: #d90368;
+    color: #232630;
+}
+
+.buttons div:hover {
+    transform: scale(1.1);
+}
+
+.window-bottom {
+    height: 20px;
+    background-color: #828081;
+}
+
+.window-top {
+    min-height: 20px;
+    background-color: #828081;
+    color: #0a1612;
+    padding: 2px 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.window-content {
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.window-bottom {
+    height: 20px;
+    background-color: #828081;
 }
 
 .active {

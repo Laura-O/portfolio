@@ -34,8 +34,8 @@ export default {
 
 <style scoped>
 .icon {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     background-color: transparent;
     margin: 15px 10px 15px 10px;
     padding: 10px;

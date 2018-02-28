@@ -57,39 +57,5 @@ export default {
 </script>
 
 <style>
-.window {
-    border: solid 2px black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-}
 
-.window-top {
-    min-height: 20px;
-    background-color: #011627;
-    color: white;
-    padding: 2px 5px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.window-content {
-    padding: 10px;
-    overflow-y: auto;
-}
-
-.buttons {
-    align-self: flex-end;
-    color: #d90368;
-}
-
-.buttons div:hover {
-    transform: scale(1.1);
-}
-
-.window-bottom {
-    height: 20px;
-    background-color: #011627;
-}
 </style>

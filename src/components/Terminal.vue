@@ -1,6 +1,6 @@
 <template>
     <vue-draggable-resizable :h="height" :w="width" :x="x" :y="y"
-    :minw="minwidth" :minh="minheight" :drag-handle="'.drag'"
+    :minw="minwidth" :minh="minheight" v-on:dragging="onDrag"
     v-on:resizing="onResize" class="window">        
         <div class="window-top drag">
             <div class="text">Terminal</div>
@@ -127,32 +127,6 @@ export default {
 pre {
     font-family: 'Inconsolata', monospace;
     font-size: 16px;
-}
-.window {
-    border: solid 2px black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-}
-
-.window-top {
-    min-height: 20px;
-    background-color: #011627;
-    color: white;
-    padding: 2px 5px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.buttons {
-    align-self: flex-end;
-    color: #d90368;
-}
-
-.window-bottom {
-    height: 20px;
-    background-color: #011627;
 }
 
 .window-content {

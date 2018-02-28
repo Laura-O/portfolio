@@ -74,38 +74,6 @@ export default {
 </script>
 
 <style>
-.window {
-    border: solid 1px black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-}
-
-.window-top {
-    min-height: 20px;
-    background-color: #828081;
-    color: white;
-    padding: 2px 5px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.window-content {
-    padding: 10px;
-    overflow-y: auto;
-}
-
-.buttons {
-    align-self: flex-end;
-    color: #fff;
-}
-
-.window-bottom {
-    height: 20px;
-    background-color: #828081;
-}
-
 div.project-image {
     text-align: center;
 }

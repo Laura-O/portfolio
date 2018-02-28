@@ -64,40 +64,8 @@ export default {
 </script>
 
 <style>
-.window {
-    /* border: solid 2px black; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-}
-
-.window-top {
-    min-height: 20px;
-    background-color: #828081;
-    color: #0a1612;
-    padding: 2px 5px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.window-content {
-    padding: 10px;
-    overflow-y: auto;
-}
-
 .bio-paragraph {
     margin-top: 10px;
-}
-
-.buttons {
-    align-self: flex-end;
-    color: #232630;
-}
-
-.window-bottom {
-    height: 20px;
-    background-color: #828081;
 }
 
 .user-icon {
