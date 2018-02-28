@@ -13,7 +13,7 @@
         </div>
         <div class="window-content">            
             <h2>Hi, I am Laura!</h2>
-            <div class="bio-paragraph">I am a full stack developer with a passion for beautiful frontends and innovative designs.</div>
+            <div class="bio-paragraph">I am a full stack developer with a passion for visually appealing and easy to navigate frontends.</div>
             <div class="bio-paragraph">You can view some of my projects by clicking on the icons on the desktop. Don't forget to click on the start menu!</div>
             <div class="bio-paragraph">You can also follow me on <a class="highlight-link" target="_blank" v-bind:href="github"> GitHub </a></div>
           <div></div>
